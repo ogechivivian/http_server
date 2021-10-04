@@ -5,3 +5,10 @@ Serves on port 80.
 All other paths return "Well, hello there!"
 
 `$ ruby webserver.rb`
+
+## Requirement
+### Setting up locally 
+The following tools should be installed on the workstation
+* Docker
+* Ruby
+* minikube
