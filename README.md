@@ -25,12 +25,12 @@ The following tools should be installed on the workstation
 
 ### Building a Docker image
 There is a Dockerfile located at the base directory. Run the following command from the tterminal to build a docker image `docker build -t nameoftherepository:version .` the -t flag is to tag the image 
-After a successful docker build view the image with `docker images`.
-To start and test the image run `docker run -it -p 80:80 imagename` this will start a docker container and expose it on port 80 and can be accessible from the browser `http:\\localhost:80` or `http://localhost:80/checkhealth` this can be tested on the terminal using the curl command `curl -v http://localhost:80`
+After a successful docker build view the image with `docker images`.\
+To start and test the image run `docker run -it -p 80:80 imagename` this will start a docker container and expose it on port 80 and can be accessible from the browser `http:\\localhost:80` or `http://localhost:80/checkhealth`. This can be tested on the terminal using the curl command `curl -v http://localhost:80`
 ### Push the image to an Image Registry
 The Image on the local machine can be pushed to an Image registry using the `docker push` command.
 ### Deploy the Application on Minikube
-In the kube-manifest directory, we have the deploy.yml, service.yml and hpa.yml to deploy the application on kubernetes. Run the `kubectl apply -f nameoffile.yml`
+In the kube-manifest directory, we have the deploy.yml, service.yml and hpa.yml to deploy the application on kubernetes.\ Run the `kubectl apply -f nameoffile.yml`
 
 ### Run the Script to Build, Push and Deploy 
 The install.sh located on the base directory has the compiled script to build, push and deploy.
