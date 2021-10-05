@@ -36,7 +36,16 @@ In the kube-manifest directory, we have the deploy.yml, service.yml and hpa.yml 
 The install.sh located on the base directory has the compiled script to build, push and deploy.
 Run the `./install.sh` to get started
 
+### Accessing the application on the Minikube cluster
+A LoadBalancer service is the standard way to expose a service to the internet. With this method, each service gets its own IP address\
+Change directory to the kube-manifest folder and run `kubectl apply -f service.yml` this will expose the app on port `30904` localhost\
+Run this command `kubectl get svc` to confirm the service is deployed.\
+On the browser you can access the application endpoints  on `http:\\localhost:30904` or `http:\\localhost:30904\healthcheck`
+
+
 ### Architecture 
+<img src="./image.png">
+
 
 
 
