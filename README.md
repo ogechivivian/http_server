@@ -11,13 +11,14 @@ An HTTP status code of 200
 On the Makefile in the base directory you will find the command to build the docker image, push to a docker registry and deploy to the cluster using helm chart. I have also highlighted how to manually test the build and deployment.
 ## Requirement
 ### Setting up locally 
-The following tools should be installed on the workstation
-* Docker
-* Ruby
-* minikube
-* git
-* kubectl
-* helm
+The following tools should be installed on the workstation. For installation guide refer to the link
+* Docker (https://docs.docker.com/engine/install/)
+* Ruby (https://www.ruby-lang.org/en/documentation/installation/)
+* minikube(https://kubernetes.io/docs/tasks/tools/)
+* git (https://git-scm.com/downloads)
+* kubectl (https://kubernetes.io/docs/tasks/tools/)
+* helm (https://helm.sh/docs/intro/install/)
+* Make (http://ftp.gnu.org/gnu/make/)
 
 ### Running on your terminal Manually
 
@@ -35,6 +36,13 @@ The Image on the local machine can be pushed to an Image registry using the `doc
 
 ### Build the Docker Image using Docker-compose
 Run `docker-compose up -d` to build the docker image and `docker-compose push` to push the image to a registry
+
+### Build, Push and deploy the application using Make
+The following commands are available:
+* make build (To build the docker image)
+* make push (To push the docker image to a registry)
+* make install (To deploy the application on kubernetes)
+* make uninstall (To delete the application)
 ### Deploy the Application on Minikube
  Run `helm install deploy charts/httpchart/` to deploy the service, hpa and deployment on the cluster
 
