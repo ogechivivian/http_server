@@ -5,7 +5,7 @@ Serves on port 80.
 All other paths return "Well, hello there!"
 An HTTP status code of 200
 
-`$ ruby webserver.rb`
+`$ ruby http_server.rb`
 
 ## Requirement
 ### Setting up locally 
@@ -33,8 +33,9 @@ The Image on the local machine can be pushed to an Image registry using the `doc
 In the kube-manifest directory, we have the deploy.yml, service.yml and hpa.yml to deploy the application on kubernetes.\ Run the `kubectl apply -f nameoffile.yml`
 
 ### Run the Script to Build, Push and Deploy 
-The install.sh located on the base directory has the compiled script to build, push and deploy.
-Run the `./install.sh` to get started
+//TODO
+<!-- The install.sh located on the base directory has the compiled script to build, push and deploy.
+Run the `./install.sh` to get started -->
 
 ### Accessing the application on the Minikube cluster
 A LoadBalancer service is the standard way to expose a service to the internet. With this method, each service gets its own IP address\
@@ -45,7 +46,3 @@ On the browser you can access the application endpoints  on `http:\\localhost:30
 
 ### Architecture 
 <img src="./image.png">
-
-
-
-
