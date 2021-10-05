@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  app:
+    image: ogechi/http_server:latest
+    build: 
+      context: .
+    ports:
+      - "80:80"
