@@ -25,12 +25,11 @@ The following tools should be installed on the workstation. For installation gui
 * Step 1: Clone the project ` git clone https://github.com/ogechivivian/http_server.git`
 * Step 2: Open in a code editor  i.e vscode, notepad ++ ....
 * Step 3: Launch the following command ` $ ruby http_server.rb `  to start the application on port 80
-* Step 4: Launch the browser and access the application on  `http://localhost:80` or `http://localhost:80/checkhealth`
+* Step 4: Launch the browser and access the application on  `http://localhost:80` or `http://localhost:80/healthcheck`
 
 ### Building a Docker image with the Dockerfile
 There is a Dockerfile located at the base directory. Run the following command from the tterminal to build a docker image `docker build -t {nameoftherepository}:version .` the -t flag is to tag the image 
-After a successful docker build view the image with `docker images`.\
-To start and test the image run `docker run -it -p 80:80 imagename` this will start a docker container and expose it on port 80 and can be accessible from the browser `http://localhost:80` or `http://localhost:80/checkhealth`. This can be tested on the terminal using the curl command `curl -v http://localhost:80`
+
 ### Push the image to an Image Registry
 The Image on the local machine can be pushed to an Image registry using the `docker push` command.
 
@@ -48,15 +47,25 @@ The following commands are available:
 
 ### Access the application
 A LoadBalancer service is the standard way to expose a service to the internet. With this method, each service gets its own IP address\
-In the test we are using the localhost and exposed port 30904 specified on the service.yaml file in the templates folder.
+In the test we are using the localhost and exposed port 30904 specified on the service.yaml file in the templates folder. To access the 
+application deployed launch `http://localhost:30904` and `http://localhost:30904/healthcheck`
 
-### Confirm the deployments,service and hpa wth the kubectl utility
-Run this command `kubectl get svc` to confirm the service is deployed.\
-On the browser you can access the application endpoints  on `http:\\localhost:30904` or `http:\\localhost:30904\healthcheck`\
-To check the deployment `kubectl get deployment`\
-* `kubectl get hpa` returns the hpa
-* `kubectl get pods` returns the pods
 
 
 ### Architecture 
 <img src="./image.png">
+
+
+### Troubleshooting
+
+## Confirm the deployments,service and hpa wth the kubectl utility
+Run this command `kubectl get svc` to confirm the service is deployed.\
+On the browser you can access the application endpoints  on `http://localhost:30904` or `http://localhost:30904/healthcheck`\
+To check the deployment `kubectl get deployment`\
+* `kubectl get hpa` returns the hpa
+* `kubectl get pods` returns the pods
+
+## Interact with the docker image
+After a successful docker build view the image with `docker images` command.\
+To start and test the image run `docker run -it -p 80:80 imagename` this will start a docker container and expose it on port 80 and can be accessible from the browser `http://localhost:80` or `http://localhost:80/healthcheck`. This can be tested on the terminal using the curl command `curl -v http://localhost:80`
+
