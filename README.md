@@ -28,8 +28,8 @@ The following tools should be installed on the workstation. For installation gui
 * Step 4: Launch the browser and access the application on  `http://localhost:80` or `http://localhost:80/healthcheck`
 
 ### Building a Docker image with the Dockerfile
-There is a Dockerfile located at the base directory. Run the following command from the tterminal to build a docker image `docker build -t {nameoftherepository}:version .` the -t flag is to tag the image 
-
+There is a Dockerfile located at the base directory. Run the following command from the tterminal to build a docker image `docker build -t {NAME_OF_THE_REPOSITORY}:version .` the -t flag is to tag the image 
+<code>Note: NAME_OF_THE_REPOSITORY refers to docker image repository or any other private/pubic image registry </code>
 ### Push the image to an Image Registry
 The Image on the local machine can be pushed to an Image registry using the `docker push` command.
 
