@@ -56,16 +56,16 @@ application deployed launch `http://localhost:30904` and `http://localhost:30904
 <img src="./image.png">
 
 
-### Troubleshooting
+### Troubleshooting Tips
 
-## Confirm the deployments,service and hpa wth the kubectl utility
+#### Confirm the deployments,service and hpa with the kubectl utility
 Run this command `kubectl get svc` to confirm the service is deployed.\
 On the browser you can access the application endpoints  on `http://localhost:30904` or `http://localhost:30904/healthcheck`\
 To check the deployment `kubectl get deployment`\
 * `kubectl get hpa` returns the hpa
 * `kubectl get pods` returns the pods
 
-## Interact with the docker image
+#### Interact with the docker image
 After a successful docker build view the image with `docker images` command.\
 To start and test the image run `docker run -it -p 80:80 imagename` this will start a docker container and expose it on port 80 and can be accessible from the browser `http://localhost:80` or `http://localhost:80/healthcheck`. This can be tested on the terminal using the curl command `curl -v http://localhost:80`
 
